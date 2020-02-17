@@ -13,12 +13,16 @@ app.get('/error.jpeg', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/error.jpeg'));
   });
 
+app.get('/dark.css', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/dark.css'));
+});
+
 app.get('/', (req, res) => {
   res.render('index');
 });
 
 app.get('/about', (req, res) => {
-  res.render('about');
+  res.render('about.hbs', { layout: 'dark' });
 });
 
 app.get('/contact', (req, res) => {
