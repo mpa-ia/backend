@@ -2,7 +2,7 @@
 <form action="/contact/send-message" method="POST">
     {{#if isSent}}
     <div class="isSent">
-        The message has been sent!
+        The message has been sent! File has been saved
     </div>
     {{/if}}
     {{#if isError}}
@@ -20,8 +20,10 @@
   <label>
     Title: <input type="text" name="title">
   </label>
+    <input type="file" name="file" accept=".png,.jpg,.gif">
    <label>
     Message: <textarea name="message"></textarea>
   </label>
+
   <button type="submit">Send message</button>
 </form>
