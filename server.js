@@ -33,8 +33,8 @@ app.get('/contact', (req, res) => {
 });
 
 app.post('/contact/send-message', (req, res) => {
-  const { author, sender, title, message } = req.body;
-  if(author && sender && title && message) {
+  const { author, sender, title, message, file } = req.body;
+  if(author && sender && title && message, file) {
     res.render('contact', { isSent: true });
   }
   else {
