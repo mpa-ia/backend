@@ -12,10 +12,6 @@ app.use(express.json());
 app.engine('.hbs', hbs({ extname: 'hbs', layoutsDir: './views/layouts', defaultLayout: 'main' }));
 app.set('view engine', '.hbs');
 
-app.get('/error.jpeg', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/error.jpeg'));
-  });
-
 app.get('/style.css', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/style.css'));
 });
