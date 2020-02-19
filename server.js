@@ -35,7 +35,7 @@ app.get('/contact', (req, res) => {
 app.post('/contact/send-message', (req, res) => {
   const { author, sender, title, message, file } = req.body;
   if(author && sender && title && message, file) {
-    res.render('contact', { isSent: true });
+    res.render('contact', { isSent: true, file: file });
   }
   else {
     res.render('contact', { isError: true });
