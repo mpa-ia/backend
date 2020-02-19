@@ -16,6 +16,10 @@ app.get('/error.jpeg', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/error.jpeg'));
   });
 
+app.get('/style.css', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/style.css'));
+});
+
 app.get('/dark.css', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/dark.css'));
 });
@@ -40,7 +44,6 @@ app.post('/contact/send-message', (req, res) => {
   else {
     res.render('contact', { isError: true });
   }
-  // res.json(req.body);
 });
 
 app.get('/info', (req, res) => {
@@ -54,8 +57,6 @@ app.get('/history', (req, res, next) => {
 app.get('/hello/:name', (req, res) => {
   res.render('hello', { name: req.params.name });
 });
-
-
 
 app.use((req, res) => {
   res.status(404).send('404 not found...');
